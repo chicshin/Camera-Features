@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oyc-b9-5T5">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Record View Controller-->
+        <scene sceneID="oWC-Yg-A7c">
+            <objects>
+                <viewController id="oyc-b9-5T5" customClass="RecordViewController" customModule="CameraApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="204-Pr-eOA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-kb-Hfs">
+                                <rect key="frame" x="177" y="802" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.67529790322792715" green="0.1482922318121859" blue="0.14162412109065747" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="EWQ-ew-unn"/>
+                                    <constraint firstAttribute="height" constant="60" id="W6W-28-MLG"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="capture:" destination="oyc-b9-5T5" eventType="touchUpInside" id="7wu-vV-Y3p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ggj-kb-Hfs" firstAttribute="bottom" secondItem="zzv-Ht-eBc" secondAttribute="bottom" id="h7a-j4-cxB"/>
+                            <constraint firstItem="Ggj-kb-Hfs" firstAttribute="centerX" secondItem="204-Pr-eOA" secondAttribute="centerX" id="yMN-hc-GWy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zzv-Ht-eBc"/>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="Ggj-kb-Hfs" id="BJY-rQ-vbw"/>
+                        <segue destination="fsn-vx-qdA" kind="presentation" identifier="playVideo" id="HlQ-zI-zoZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Va9-XL-llv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-662"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="UHQ-d7-gQc">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="fsn-vx-qdA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCI-bw-bGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-661"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -60,8 +104,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOJ-07-bQM">
-                                        <rect key="frame" x="8" y="15" width="48" height="30"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <rect key="frame" x="8" y="15" width="34" height="30"/>
+                                        <state key="normal" title="Back"/>
                                         <connections>
                                             <action selector="cancelButton_touchUpInside:" destination="L0m-iX-ktn" eventType="touchUpInside" id="ez4-fx-PAT"/>
                                         </connections>
